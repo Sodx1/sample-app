@@ -1,4 +1,4 @@
-name: Publishing image in Dockerhub
+name: Publishing in Dockerhub
 on:
   pull_request:
     branches:
