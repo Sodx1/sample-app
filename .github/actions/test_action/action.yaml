@@ -1,5 +1,5 @@
 name: "Run tests"
-description: "Running unit tests for devops final task project"
+description: "Running unit tests for devops final task"
 inputs:
   image:
     description: "image:tag"
