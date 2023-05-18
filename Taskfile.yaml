@@ -13,7 +13,7 @@ tasks:
   build-tests:
     cmds:
       - docker build -t devops-final-task:{{.TAG}} --target tests .
-      - echo Success tests build. name=devops-final-task: {{.TAG}}
+      - echo Success tests build. name=devops-final-task:{{.TAG}}
   
   build-prod:
     cmds:
