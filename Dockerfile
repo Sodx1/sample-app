@@ -1,9 +1,9 @@
 FROM python:3.11.3-slim AS builder
 WORKDIR /opt/app
 
-RUN apt update && \
-    apt upgrade && \
-    python -m pip install --upgrade pip 
+RUN apt update -y \
+    && apt upgrade && \
+    python -m pip install --upgrade pip \
 
 RUN apt install -y \
     wget && \
