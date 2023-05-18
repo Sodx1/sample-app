@@ -74,7 +74,7 @@ setproctitle = ["setproctitle"]
 tornado = ["tornado (>=0.2)"]
 
 [[package]]
-name = "psycopg2"
+name = "psycopg2-binary"
 version = "2.9.6"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
 category = "main"
