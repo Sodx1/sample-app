@@ -1,9 +1,9 @@
 FROM python:3.11.3-slim AS builder
 WORKDIR /opt/app
 
-RUN apt update -y \
-    && apt upgrade && \
-    python -m pip install --upgrade pip \
+RUN apt update && \
+    apt upgrade && \
+    python -m pip install --upgrade pip 
 
 RUN apt install -y \
     wget && \
@@ -16,7 +16,7 @@ COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 COPY poetry.toml poetry.toml
 
-RUN poetry install
+RUN pip poetry install
 
 RUN wget https://taskfile.dev/install.sh && \
     chmod +x install.sh && \
