@@ -27,7 +27,7 @@ RUN wget https://taskfile.dev/install.sh && \
 COPY sampleapp sampleapp
 COPY sampleproject sampleproject
 
-COPY Container-taskfile.yaml Taskfile.yaml
+COPY TaskfileContainer.yaml Taskfile.yaml
 COPY manage.py manage.py
 
 FROM builder AS tests
