@@ -1,4 +1,4 @@
-name: Bild final task image
+name: Bild final task image repo
 on:
   push: {}
   workflow_dispatch:
