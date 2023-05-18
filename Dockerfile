@@ -16,7 +16,7 @@ COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 COPY poetry.toml poetry.toml
 
-RUN pip poetry install
+RUN poetry install
 
 RUN wget https://taskfile.dev/install.sh && \
     chmod +x install.sh && \
