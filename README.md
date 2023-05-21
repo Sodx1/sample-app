@@ -61,4 +61,29 @@ python manage.py runserver
 ```shell
 gunicorn sampleproject.wsgi
 ```
+### Автоматизация docker:
+Сборка образа sampleapp:%Y%m%d%H%M%S
+```shell
+task docker-build
+```
+
+Запуск контенейра `latest`
+```shell
+task run
+```
+
+### Автоматизация docker compose:
+Запуск базы даных и приложения 
+(Нужны сделать миграции)
+```shell
+task up
+```
+Удалить все контейнеры:
+```shell
+task down
+```
+Выполнить миграции в базу данных:
+```shell
+task migrate
+```
 
