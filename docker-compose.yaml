@@ -10,7 +10,6 @@ services:
     env_file:
       - .env
     command: ["gunicorn", "--bind", "0.0.0.0:8000", "sampleproject.wsgi"]
-    # ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     depends_on:
     - db
     
