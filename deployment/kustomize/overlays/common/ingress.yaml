@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: amalkov-devops-final-ingress
+  name: app-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
@@ -13,10 +13,10 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: amalkov-devops-final-service
+                name: app-service
                 port:
-                  name: http
+                  name: web
   tls:
     - hosts:
       - amalkov.dacdevops.ru
-      secretName: amalkov-devops-final-cert
+      secretName: amalkov-cert
