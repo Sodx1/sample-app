@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-amalkov-certificate
+spec:
+  dnsNames:
+  - 'amalkov.dacdevops.ru'
+  issuerRef:
+    kind: ClusterIssuer
+    name: yc-clusterissuer
+  secretName: amalkov-cert
