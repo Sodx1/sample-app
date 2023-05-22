@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amalkov-devops-final-deployment-app
+  labels:
+    app: amalkov-devops-final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amalkov-devops-final
+  template:
+    metadata:
+      labels:
+        app: amalkov-devops-final
+    spec:
+      initContainers:
+        - name: simpleapp-migrate
+          image: simpleapp-image
+          args:
+            - migrate
+          envFrom:
+            - secretRef:
+                name: amalkov-devops-final-postgres-secret
+      containers:
+        - name: simpleapp
+          image: simpleapp-image
+          args:
+            - gunicorn
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: amalkov-devops-final-postgres-secret
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "500Mi"
+              cpu: "1"

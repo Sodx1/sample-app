@@ -13,3 +13,12 @@ COPY . .
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
+
+COPY entrypoint.sh entrypoint.sh
+RUN chmod u+x entrypoint.sh
+
+COPY sampleapp sampleapp
+COPY sampleproject sampleproject
+COPY manage.py manage.py
+
+ENTRYPOINT [ "./entrypoint.sh" ]

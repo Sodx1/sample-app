@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: amalkov-devops-certificate
+  namespace: amalkov-devops-final
+spec:
+  dnsNames:
+  - 'amalkov.dacdevops.ru'
+  issuerRef:
+    kind: ClusterIssuer
+    name: yc-clusterissuer
+  secretName: amalkov-devops-final-cert
