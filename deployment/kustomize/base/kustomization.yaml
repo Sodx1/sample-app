@@ -11,5 +11,3 @@ resources:
   - postgres-service.yaml
   - service.yaml
   - secret.yaml
-
-
