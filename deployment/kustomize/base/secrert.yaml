@@ -3,8 +3,6 @@ kind: Secret
 metadata:
   name: app-secret
 data:
-  DATABASE_URL: postgres://postgres:samplepassword@postgres-service/postgres
-  POSTGRES_PASSWORD: samplepassword
+  POSTGRES_PASSWORD: example
   POSTGRES_USER: postgres
-  POSTGRES_DB: sampledb
   
