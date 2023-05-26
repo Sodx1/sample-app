@@ -1,10 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+namespace: amalkov
+images:
+  - name: nginx
+    newName: nginx
+    newTag: 1.23.2-alpine
+  - name: sodx/sampleapp
+    newTag: v1.2.0
+
+
+
 resources:
 - ../../base
 - ingress.yaml
 - namespace.yaml
 - certificate.yaml
 
-namespace: amalkov
