@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-service
+  name: sampleapp-service
 spec:
   selector:
-    app: amalkov-app
+    app: sampleapp
   ports:
     - name: http
       protocol: TCP

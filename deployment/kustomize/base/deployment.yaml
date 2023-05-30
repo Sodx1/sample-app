@@ -14,19 +14,19 @@ spec:
     spec:
       initContainers:
         - name: sampleapp-migrate
-          image: sodx/sampleapp:main
+          image: amalkov/sampleapp
           command: ["python", "manage.py", "migrate"]
           ports:
             - containerPort: 8000
           envFrom:
             - secretRef:
-                name: app-secret
+                name: sampleapp-secret
       containers:
         - name: sampleapp
-          image: sodx/sampleapp:main
+          image: amalkov/sampleapp
           command: ["gunicorn", "--bind", "0.0.0.0:8000", "sampleproject.wsgi"]
           ports:
             - containerPort: 8000
           envFrom:
             - secretRef:
-                name: app-secret
+                name: sampleapp-secret
