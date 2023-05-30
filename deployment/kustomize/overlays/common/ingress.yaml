@@ -13,7 +13,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: app-service
+                name: sampleapp-service
                 port:
                   name: http
   tls:
