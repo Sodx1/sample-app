@@ -16,8 +16,6 @@ spec:
         - name: sampleapp-migrate
           image: sodx/sampleapp
           command: ["python", "manage.py", "migrate"]
-          ports:
-            - containerPort: 8000
           envFrom:
             - secretRef:
                 name: sampleapp-secret
